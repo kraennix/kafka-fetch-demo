@@ -1,0 +1,24 @@
+server:
+  port: 8087
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer: # https://docs.confluent.io/platform/current/installation/configuration/consumer-configs.html
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      heartbeat-interval: 1000
+      max-poll-records: 50
+      group-id: kafka-fetch-demo
+      fetch-max-wait: 10000
+    listener: # https://docs.spring.io/spring-kafka/reference/html/#container-props
+      type: single
+      concurrency: 1
+      poll-timeout: 1000
+      no-poll-threshold: 2
+      monitor-interval: 10
+      ack-mode: manual
+    producer: # https://docs.confluent.io/platform/current/installation/configuration/producer-configs.html
+      acks: all
+      batch-size: 0
+      retries: 0

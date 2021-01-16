@@ -1,0 +1,8 @@
+demo:
+  topic-pattern: publish\.LargeTopic\.\d+\.test
+  producer-topic: publish.LargeTopic.2.test
+  topics:
+    - publish.LargeTopic.1.test
+    - publish.LargeTopic.2.test
+  number-of-events: 1000
+  large: true

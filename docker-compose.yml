@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  kafka:
+    image: krisgeus/docker-kafka:latest
+    ports:
+      - "2181:2181"
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      - "LISTENERS=PLAINTEXT://0.0.0.0:9092"
+      - "ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092"
+      - "SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,INTERNAL:PLAINTEXT"
+      - "AUTO_CREATE_TOPICS=true"

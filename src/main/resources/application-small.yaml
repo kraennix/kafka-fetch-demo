@@ -1,0 +1,8 @@
+demo:
+  topic-pattern: publish\.SmallTopic\.\d+\.test
+  producer-topic: publish.SmallTopic.2.test
+  topics:
+    - publish.SmallTopic.1.test
+    - publish.SmallTopic.2.test
+  number-of-events: 1000
+  large: false
